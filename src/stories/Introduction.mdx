@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Timegrid Design System
+
+Apiko's time tracker (Hubstaff replacement). Source of truth: Figma file **Apiko Timy**, page **Timegrid · Design System**.
+
+## How to use the toolbar
+- **Theme** — Light, Dark, or both side by side.
+- **Wallpaper** — the desktop background under the window. The window material is 94% opaque, so it looks the same on any wallpaper.
+
+## Tokens
+All colors, type, spacing and radii are CSS variables in `src/tokens/tokens.css` (generated from `tokens.json`, which mirrors the Figma variable collections **Timegrid · Theme** and **Timegrid · Layout**).
+
+```css
+.my-row { background: var(--tg-bg-surface); color: var(--tg-text-primary); border-radius: var(--tg-radius-lg); }
+```
+
+Theme is switched with `data-theme="light" | "dark" | "system"` on any ancestor element.
+
+## Rules
+- Never use raw hex — always a token.
+- Project is the primary line in lists, task is secondary.
+- Use springs / short ease-out for feedback; respect `prefers-reduced-motion` and `prefers-reduced-transparency`.
